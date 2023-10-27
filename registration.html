@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+    <form id="Form">
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+    </form>
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+		function showName() {
+			// Show filled name inside h1
+            let text = document.getElementById("dName")   
+            var myInputElement = document.getElementById("name");
+            var value = myInputElement.value;
+            text.innerText = value
+		}
+
+		function showGender() {
+			// Show the selected gender inside h2
+            let text = document.getElementById("dGender")  
+            var selectElement = document.getElementById("gender");
+            var selectedOption = selectElement.options[selectElement.selectedIndex];
+            var selectedValue = selectedOption.value;
+            text.innerText = selectedValue
+		}
+
+		function showEmail() {
+			// Show the filled email inside h3
+            let text = document.getElementById("dEmail")   
+            var myInputElement = document.getElementById("email");
+            var value = myInputElement.value; 
+            text.innerText = value
+		}
+
+		function showMobile() {
+			// Show the filled mobile inside h4
+            let text = document.getElementById("dMobile")
+            var myInputElement = document.getElementById("mobile");
+            var value = myInputElement.value;    
+            text.innerText = value
+		}
+
+		function resetForm() {
+			// Reset all the form elements to default values (blank "")
+            document.getElementById("Form").reset();
+		}
+
+		function resetDisplay() {
+			// Reset all the headings (h1, h2, h3, h4) to blank values
+            document.getElementById('dName').innerHTML='';
+            document.getElementById('dGender').innerHTML='';
+            document.getElementById('dEmail').innerHTML='';
+            document.getElementById('dMobile').innerHTML='';
+		}
+	</script>
+</body>
+</html>
